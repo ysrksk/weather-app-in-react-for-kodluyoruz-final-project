@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
+
+$border-radius: 20px;
+
+$morro: #aacbe6;
+$cayucos: #9cd0ff;
+$bahamas: #3cc0fe;
+$capetown: #27a5fd;
+$cabo: #0066ff;
+$reynisfjara: #34373e;
+$svalbard: #d2e9fa;
+
+$bahamasAlpha: rgba($bahamas, 0.7);
+$caboAlpha: rgba($cabo, 0.6);
+
+$capetownShadow: rgba($capetown, 0.4);
+
+$widgetHeight: 400px;
+$pictoBackdropDiameter: $widgetHeight * 1.4;
+$pictoFrameDiameter: $pictoBackdropDiameter * .6;

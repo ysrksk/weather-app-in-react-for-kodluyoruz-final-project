@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import {  BrowserRouter,  Routes,  Route,} from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import ErrorBoundary from "./components/ErrorBoundary";
+
+import {Login, Weather, WeatherDetails} from './pages'
+import './styles/Main.scss'
+import { WeatherProvider} from './context/WeatherContext';
+
 
 function App() {
+  if (localStorage.getItem('user')){
+    return (
+      <>
+      <WeatherProvider>
+        <BrowserRouter>
+          <Navbar/>
+          <Routes>
+            <Route path="/" element={<Weather/>}/>
+            <Route index element={<Weather />} />
+            <Route path="/:cityName" element={<ErrorBoundary><WeatherDetails/></ErrorBoundary>}/>
+          </Routes>
+        </BrowserRouter>
+      </WeatherProvider>
+      </>
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <WeatherProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login/>}/>
+        </Routes>
+      </BrowserRouter>
+    </WeatherProvider>
+    </>
+  )
 }
 
 export default App;

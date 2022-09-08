@@ -1,0 +1,362 @@
+@import '_variables.scss';
+
+.weather {
+  &-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:  80px;
+    gap: 12px;
+    justify-content: center;    
+  }
+
+  &-search{
+    background: rgb(18, 30, 53);
+    width: 400px;
+    height: $widgetHeight;
+    border-radius: 6px;
+    box-shadow: 0px 60px 80px -20px $capetownShadow;
+    opacity:0.9;
+  }
+
+  &-container {
+    display: flex;
+    opacity:0.99;
+  }
+
+  &-widget {
+    background: linear-gradient(to bottom right, $bahamas 20%, $cabo);
+    width: 800px;
+    height: $widgetHeight;
+    border-radius: 6px;
+    box-shadow: 0px 60px 80px -20px $capetownShadow;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &-pictoBackdrop {
+    position: absolute;
+    height: $pictoBackdropDiameter;
+    width: $pictoBackdropDiameter;
+    border-radius: 50%;
+    background: linear-gradient(160deg, $bahamasAlpha 40%, $caboAlpha);
+    right: -40px;
+    top: -90px;
+  }
+
+  &-pictoFrame {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0px 50px 60px -20px $cabo;
+    height: $pictoFrameDiameter;
+    width: $pictoFrameDiameter;
+    right: 80px;
+    top: 100px;
+  }
+
+
+  &-details{
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 60px;
+  }
+
+  &-temperature {
+    color: white;
+    font-weight: 300;
+    font-size: 10em;
+  }
+  
+  &-summary {
+    color: $svalbard;
+    font-size: 2em;
+    font-weight: 300;
+    width: 260px;
+    margin-top: -16px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid $cayucos;
+    margin-left: 8px;
+  }
+
+  &-summaryText {
+    margin: 0;
+    font-size: 28px;
+  }
+
+  &-precipitation, &-wind {
+    color: $svalbard;
+    font-size: 1.6em;
+    font-weight: 300;
+    margin-left: 8px;
+  }
+
+  &-precipitation {
+    margin-top: 16px;
+  }
+
+  &-wind {
+    margin-top: 4px;
+  }
+
+  &-search-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  &-search-input {
+    background-color: #f1f1f1;
+    width: 250px;
+    height: 30px;
+    margin: 5px;
+    margin-top: 15px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    border-radius: 6px;
+    
+
+    &:active {
+      box-shadow: #3c4fe0 0 3px 7px inset;
+      transform: translateY(2px);
+      border: 0cm;
+    }
+
+    &:hover {
+      box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -2px, #3c4fe0 0 -2px 0 inset;
+      transform: translateY(-0.1px);
+    }
+  }
+
+  &-search-btn {
+    margin-top: 10px;
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #3045e6 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 38px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+
+    &:focus {
+      box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    } 
+
+    &:hover {
+      box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      box-shadow: #3c4fe0 0 3px 7px inset;
+      transform: translateY(2px);
+    }
+
+  }
+
+  &-search-content {
+    text-align: center;
+    display:block;
+    flex-wrap: wrap;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    
+  }
+
+  &-search-btn2 {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+  & > button:first-child {
+    margin-top: 10px;
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #3045e6 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 38px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+
+    &:focus {
+      box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    } 
+
+    &:hover {
+      box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      box-shadow: #3c4fe0 0 3px 7px inset;
+      transform: translateY(2px);
+    }
+  }
+  }
+
+  &-hr {
+    margin-top: 30px;
+  }
+
+  &-localStoragePage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+    margin-right: auto;
+
+  }
+
+  &-localStorePage-widget {
+    margin-top: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    height: 200px;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    flex-wrap: wrap;
+    cursor: pointer;
+    border-radius: $border-radius;
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &-localStorePage-weatherIcon {
+    flex:  100%;
+    height: 60%;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    background: #beb7b7;
+    background-image: url("../../documants/weather1.jpg");
+    background-size: 3cm;
+    background-repeat: no-repeat;
+    font-family: weathericons;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 100px;
+  }
+
+  &-localStorePage-Icon {
+    margin-left: 110px;
+    width: 145px;
+    height: 145px;
+  }
+
+  &-localStorePage-weatherInfo {
+    flex: 0 0 70%;
+    height: 40%;
+    background: rgb(18, 30, 53);
+    border-bottom-left-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  &-localStorePage-temperature{
+    margin: auto;
+    width: 30px;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &-localStorePage-description {
+    flex: 0 60%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  &-localStorePage-weatherCondition{
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 100;
+  }
+
+  &-localStorePage-place {
+    font-size: 15px;
+  }
+
+  &-localStorePage-date {
+    flex: 0 0 30%;
+    height: 40%;
+    background: rgb(73, 97, 141);
+    border-bottom-right-radius: $border-radius;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  &-input-container {
+    position: relative;
+    & > input {
+      padding: 6px;
+      border: 2px solid #ddd;
+      width: 150px;
+      padding-left: 30px;
+      transition: .3s all;
+      &:active, &:focus, &:focus-visible {
+        border: 2px solid #316ac5;
+        outline: none;
+      }
+    }
+    
+  }
+
+}
+
