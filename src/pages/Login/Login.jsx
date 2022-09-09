@@ -10,6 +10,7 @@ const Login = (props) => {
     const context = useContext(WeatherContext);
     const [user, setUser] = useState ('');
     const [pass, setPass] = useState ('');
+    
     const diffToast = () => toast.warn("Username or Password is incorrect", {
         position: "top-right",
         autoClose: 3000,
@@ -30,7 +31,7 @@ const Login = (props) => {
     }
 
     const loginControl = (e) => {
-        if(user === 'admin' && pass === 'admin'){
+        if(user.toLocaleLowerCase() === 'admin' && pass.toLocaleLowerCase() === 'admin'){
          localStorage.setItem('user', JSON.stringify(user)) 
         }else{
             e.preventDefault();

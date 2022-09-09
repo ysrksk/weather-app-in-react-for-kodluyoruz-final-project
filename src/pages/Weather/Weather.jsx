@@ -11,7 +11,8 @@ const Weather = (props) => {
     const [city, setCity] = useState({});
     const navigate = useNavigate();
     const {citiesInLocalStorage, setCitiesLocalStorage} = useContext(WeatherContext);
-    const [localStoragedCities, setLocalStoragedCities] = useState([]);      
+    const [localStoragedCities, setLocalStoragedCities] = useState([]); 
+
     const getCity = (e) => {
         setCity(e.target.value)
     }
@@ -30,6 +31,7 @@ const Weather = (props) => {
             const obj = JSON.parse(localStorage.getItem("cities"));  
             const newArray = [];
             const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            
             for (let i = 0; i < obj.length; i++) {
               const element = obj[i];
               const res = await getWeatherForecastByCityNameForLocalStorage(element);
@@ -46,6 +48,7 @@ const Weather = (props) => {
               const myArray = data.split(",");
               newArray.push(myArray);
             } 
+
         setLocalStoragedCities(newArray);
 
             // props.setLoading(false)
@@ -58,6 +61,7 @@ const Weather = (props) => {
         const obj = JSON.parse(localStorage.getItem("cities"));  
         const newArray = [];
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
         for (let i = 0; i < obj.length; i++) {
           const element = obj[i];
           const res = await getWeatherForecastByCityNameForLocalStorage(element);
