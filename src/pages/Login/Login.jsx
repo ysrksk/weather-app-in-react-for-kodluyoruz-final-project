@@ -42,7 +42,8 @@ const Login = (props) => {
     return(
         <>
         <form className="login-form">
-            <h2>Login Form</h2>
+
+            <h1>Weather Forecast</h1>
             <div>           
                 <label ><b>Username</b></label>
                 <input className="login-input" value={user} onChange={handleUser} type="text" placeholder="Enter Username" />
