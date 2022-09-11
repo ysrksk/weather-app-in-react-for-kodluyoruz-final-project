@@ -126,7 +126,7 @@ const Weather = (props) => {
           <div className="weather-search">
             <div className="weather-search-list">
               <form className="weather-form"> 
-                  <input className="weather-search-input" type="text" autoComplete="on" onChange={getCity} placeholder="Enter a location"/>
+                  <input className="weather-search-input" type="text" autoComplete="on" onChange={getCity} placeholder="Please write a location.."/>
                   <button className="weather-search-btn" type="button" onClick={fetchWeather}>Search</button>
               </form>
             </div>

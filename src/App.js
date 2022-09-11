@@ -5,6 +5,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import {Login, Weather, WeatherDetails} from './pages'
 import './styles/Main.scss'
 import { WeatherProvider} from './context/WeatherContext';
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route index element={<Weather />} />
             <Route path="/:cityName" element={<ErrorBoundary><WeatherDetails/></ErrorBoundary>}/>
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </WeatherProvider>
       </>
